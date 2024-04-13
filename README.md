@@ -2,7 +2,7 @@ This is a simple to do list created with Vanilla JavaScript, HTML and CSS.
 
 Things to consider: 
 1. The project is not responsive
-2. The JavaScript code is inside index.html sinc the project is small.
+2. The JavaScript code is inside index.html since the project is small.
 
 How it works: 
 
@@ -22,7 +22,7 @@ How it works:
 
       }
 
-2. If the is not empty we proceed with dynamically adding the item.
+2. If the field is not empty we proceed with dynamically adding the item.
 
 else {
 
@@ -51,7 +51,8 @@ else {
 The input field inside the item is disabled!              
 <input disabled class="output" type="text">
 
-Once the value is added to the new item, the input field is being cleared with the following code: 
+Once the value is added to the new item, we clear the input field with the following code: 
+
 inputVal.value = "";
 
 Lastly we create the two functions for the Delete and for the Edit button:

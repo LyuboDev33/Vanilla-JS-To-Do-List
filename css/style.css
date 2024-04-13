@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "PlovdivType";
+  src: url(/PlovdivTypeface-Fonts/OTF/PlovdivDisplay-Regular.otf);
+}
+
+* {
+  font-family: "PlovdivType", "sans-serif";
+  text-decoration: none;
+}
+
+body { 
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container { 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 450px;
+  box-shadow: 1px 1px 4px #00000069;
+  padding: 0px 5px 0;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 30px;
+  height: auto;
+}
+
+.btnCont { 
+  display: flex;
+    flex-direction: column;
+}
+
+#addButton { 
+  padding: 1px 7px 6px;
+  width: 112px;
+  font-size: 21px;
+  border: none;
+  margin: 0 auto;
+  box-shadow: 3px 3px 0px #000000;
+  border-radius: 13px;
+  color: white;
+  cursor: pointer;
+  background: #2929e5ba;
+}
+
+#addButton:hover {
+  transition: 0.7s;
+  transform: scale(1.15);
+}
+
+#addButton:not(:hover) {
+  transition: 0.7s;
+}
+
+#addInput { 
+  border: none;
+    box-shadow: 1px 1px 4px #00000075;
+    padding: 8px;
+    font-size: 20px;
+    width: 370px;
+    border-radius: 13px;
+}
+
+.outputContainer { 
+  height: auto;
+  margin-top: 20px;
+  color: black;
+  width: 500px;
+  /* box-shadow: 1px 1px 4px #00000069; */
+  border-radius: 30px;
+  padding: 14px 20px;
+  text-align: center;
+
+}
+
+.output { 
+  width: 55%;
+  border: none;
+  margin: 10px;
+  padding: 1px 8px 8px;
+  font-size: 24px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px #00000070;
+  font-weight: bold;
+  color: black;
+  border-radius: 15px;
+}
+
+.editBTN { 
+  padding: 1px 10px 4px;
+  font-size: 17px;
+  border: none;
+  background: #16b716;
+  color: white;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.editBTN:hover, .deleteBTN:hover {
+  transition: 0.7s;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.editBTN:not(:hover), .deleteBTN:not(:hover) { 
+  transition: 0.7s;
+}
+
+.deleteBTN { 
+  padding: 1px 10px 4px;
+  font-size: 17px;
+  border: none;
+  background: red;
+  color: white;
+  border-radius: 4px;
+}
+
+.errors {  
+  color: red;
+  font-size: 20px;
+}

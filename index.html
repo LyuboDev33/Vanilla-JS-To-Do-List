@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>To-Do List</title>
+</head>
+
+<body>
+
+
+  <div class="container">
+
+    <div>
+      <h2>My To-Do List</h2>
+
+      <div class="btnCont">
+
+        <input id="addInput" type="text"><br>
+        <button id="addButton">Add Tast</button>
+        <p class="errors"></p>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- <div class="items">
+      <input disabled class="output" type="text">
+      <button class="editBTN">Edit</button>
+      <button class="deleteBTN">Delete</button>
+    </div> -->
+
+  <!-- THIS CODE BELONGS INSIDE THE CONTAINER -->
+
+
+  <div class="outputContainer">
+
+
+
+
+
+  </div>
+
+
+  <script>
+
+
+
+    let item = document.querySelectorAll('.items');
+
+    let errors = document.querySelector('.errors');
+
+    let addBtn = document.querySelector('#addButton');
+    let inputVal = document.querySelector('#addInput');
+
+    let container = document.querySelector('.outputContainer');
+
+
+    addBtn.addEventListener('click', function () {
+
+      if (inputVal.value.trim() === "") {
+
+        errors.innerHTML = "Field is mandatory!";
+
+        setTimeout(function () {
+          errors.innerHTML = "";
+
+        }, 3000)
+
+        return;
+
+
+      } else {
+
+
+        container.insertAdjacentHTML('afterbegin', `
+              <div class='items'>
+              <input disabled class="output" type="text">
+              <button class="editBTN">Edit</button>
+              <button class="deleteBTN">Delete</button>
+            </div>
+            `);
+
+        let inputList = document.querySelector('.output');
+        inputList.style.background = "#00000029";
+
+        inputList.value = inputVal.value;
+
+        inputVal.value = "";
+
+        deleteButton();
+
+        editButton();
+
+      }
+
+
+
+
+    }); 
+
+
+    // This is the function for deleting a list
+    function deleteButton() {
+
+      let deleteBTN = document.querySelector('.deleteBTN');
+      let delEl = deleteBTN.closest('.items');
+
+      deleteBTN.addEventListener('click', function () {
+
+        delEl.remove();
+
+      })
+
+
+    }
+    // This is the function for deleting a list
+
+
+    // This is the function for editing a list
+    function editButton() {
+
+      let editBtn = document.querySelector('.editBTN');
+
+      let itms = editBtn.closest('.items');
+      let foundResult = itms.querySelector('.output');
+
+      editBtn.addEventListener('click', function () {
+
+        if (foundResult.hasAttribute('disabled')) {
+
+
+
+          foundResult.removeAttribute('disabled', '');
+          foundResult.setAttribute('enabled', '');
+          foundResult.style.background = "white";
+
+
+        } else {
+
+          foundResult.style.background = "#00000029";
+
+          foundResult.setAttribute('disabled', '');
+          foundResult.removeAttribute('enabled', '');
+
+        }
+
+
+      })
+
+
+    }
+    // This is the function for editing a list
+
+
+
+  </script>
+
+
+</body>
+
+</html>
